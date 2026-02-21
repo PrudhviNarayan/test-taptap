@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login / Signup</title>
+<title>Login Signup</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
@@ -13,20 +13,24 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#0f172a,#020617);
+background:linear-gradient(135deg,#4f6df5,#3454d1);
 }
 
 .container{
-width:350px;
-background:#1e293b;
+display:flex;
+gap:40px;
+}
+
+.card{
+width:320px;
+background:#fff;
 padding:30px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,0,0,0.5);
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
 h2{
 text-align:center;
-color:#38bdf8;
 margin-bottom:20px;
 }
 
@@ -37,34 +41,52 @@ margin:10px 0;
 input{
 width:100%;
 padding:10px;
-border:none;
+border:1px solid #ccc;
+border-radius:5px;
 outline:none;
-border-radius:8px;
 }
 
 button{
 width:100%;
 padding:10px;
-margin-top:15px;
-background:#38bdf8;
+margin-top:10px;
 border:none;
-border-radius:8px;
-cursor:pointer;
-}
-
-.switch{
-text-align:center;
-margin-top:15px;
+border-radius:5px;
+background:#0d6efd;
 color:white;
 cursor:pointer;
 }
 
-.form{
-display:none;
+button:hover{
+background:#0b5ed7;
 }
 
-.active{
-display:block;
+.link{
+text-align:center;
+margin:10px 0;
+font-size:14px;
+}
+
+hr{
+margin:15px 0;
+}
+
+.social{
+width:100%;
+padding:8px;
+margin-top:5px;
+border-radius:5px;
+border:1px solid #ccc;
+background:#f8f9fa;
+cursor:pointer;
+}
+
+.fb{background:#4267B2;color:white}
+.google{background:white}
+
+.or{
+text-align:center;
+margin:10px 0;
 }
 </style>
 </head>
@@ -73,7 +95,7 @@ display:block;
 
 <div class="container">
 
-<div id="login" class="form active">
+<div class="card">
 <h2>Login</h2>
 <div class="input-box">
 <input type="email" placeholder="Email">
@@ -81,38 +103,35 @@ display:block;
 <div class="input-box">
 <input type="password" placeholder="Password">
 </div>
+<p style="font-size:12px;text-align:right">Forgot password?</p>
 <button>Login</button>
-<p class="switch" onclick="showSignup()">Don't have an account? Signup</p>
+<p class="link">Don't have an account? <span style="color:blue">Signup</span></p>
+<hr>
+<p class="or">Or</p>
+<button class="social fb">Login with Facebook</button>
+<button class="social google">Login with Google</button>
 </div>
 
-<div id="signup" class="form">
+<div class="card">
 <h2>Signup</h2>
-<div class="input-box">
-<input type="text" placeholder="Full Name">
-</div>
 <div class="input-box">
 <input type="email" placeholder="Email">
 </div>
 <div class="input-box">
-<input type="password" placeholder="Password">
+<input type="password" placeholder="Create password">
+</div>
+<div class="input-box">
+<input type="password" placeholder="Confirm password">
 </div>
 <button>Signup</button>
-<p class="switch" onclick="showLogin()">Already have an account? Login</p>
+<p class="link">Already have an account? <span style="color:blue">Login</span></p>
+<hr>
+<p class="or">Or</p>
+<button class="social fb">Login with Facebook</button>
+<button class="social google">Login with Google</button>
 </div>
 
 </div>
-
-<script>
-function showSignup(){
-document.getElementById("login").classList.remove("active");
-document.getElementById("signup").classList.add("active");
-}
-
-function showLogin(){
-document.getElementById("signup").classList.remove("active");
-document.getElementById("login").classList.add("active");
-}
-</script>
 
 </body>
 </html>
